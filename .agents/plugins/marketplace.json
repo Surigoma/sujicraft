@@ -1,0 +1,20 @@
+{
+  "name": "my-engineering-local",
+  "interface": {
+    "displayName": "My Engineering Skills"
+  },
+  "plugins": [
+    {
+      "name": "my-engineering-skill",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
