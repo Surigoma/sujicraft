@@ -1,12 +1,12 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "my-engineering-skill",
+  "name": "sujicraft",
   "version": "0.0.1",
   "description": "設計・コーディング・コードレビュー・UIデザインレビュー・ドキュメントレビューの個人用判断基準。",
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "My Engineering Skill",
+        "displayName": "Sujicraft",
         "shortDescription": "設計・実装・3種類のレビューを支える個人用ルール",
         "category": "Productivity",
         "capabilities": ["Instructions"]

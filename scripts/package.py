@@ -51,7 +51,7 @@ def main():
     output = ROOT / "dist" / f'{manifest["name"]}-{manifest["version"]}-codex.zip'
     output.parent.mkdir(exist_ok=True)
     paths = [ROOT / name for name in ("plugin.json", "AGENTS.md", "README.md", "CHANGELOG.md")]
-    for name in (".codex-plugin", ".agents", "skills", "shared", "adapters", "validation", "scripts", "tests"):
+    for name in (".codex-plugin", ".agents", "skills", "shared", "assets", "adapters", "validation", "scripts", "tests"):
         paths.extend(path for path in (ROOT / name).rglob("*")
                      if path.is_file() and "__pycache__" not in path.parts)
     with ZipFile(output, "w", ZIP_DEFLATED) as archive:

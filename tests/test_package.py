@@ -25,16 +25,18 @@ def main():
         for source in (ROOT / "skills").glob("*/SKILL.md"):
             assert source.read_bytes() == (moved / source.relative_to(ROOT)).read_bytes()
         assert (ROOT / "shared/principles.md").read_bytes() == (moved / "shared/principles.md").read_bytes()
+        icon = Path("assets/branding/sujicraft-icon-joinery.png")
+        assert (ROOT / icon).read_bytes() == (moved / icon).read_bytes()
         codex = shutil.which("codex")
         if codex:
-            command = [codex, "-c", 'marketplaces.my-engineering-local.source_type="local"',
-                       "-c", f'marketplaces.my-engineering-local.source={json.dumps(moved.as_posix())}',
-                       "plugin", "list", "--marketplace", "my-engineering-local",
+            command = [codex, "-c", 'marketplaces.sujicraft-local.source_type="local"',
+                       "-c", f'marketplaces.sujicraft-local.source={json.dumps(moved.as_posix())}',
+                       "plugin", "list", "--marketplace", "sujicraft-local",
                        "--available", "--json"]
             result = subprocess.run(command, cwd=moved, text=True, encoding="utf-8",
                                     capture_output=True, check=True)
             catalog = json.loads(result.stdout)
-            assert any(item["pluginId"] == "my-engineering-skill@my-engineering-local"
+            assert any(item["pluginId"] == "sujicraft@sujicraft-local"
                        and item["version"] == manifest["version"]
                        for item in catalog["available"])
             print("PASS: Codex recognizes relocated plugin")

@@ -2,28 +2,28 @@
 
 ## 配布物
 
-ZIPを展開すると、my-engineering-skillフォルダーに5つのSKILL、共通原則、プラグイン設定、ローカル配布カタログが入る。フォルダー全体を保持する。skillsだけを切り出すと共通原則への参照が切れる。
+ZIPを展開すると、sujicraftフォルダーに5つのSKILL、共通原則、プラグイン設定、ローカル配布カタログが入る。フォルダー全体を保持する。skillsだけを切り出すと共通原則への参照が切れる。
 
 初版のバージョンは0.0.1。外部サービス、MCP、実行フックは含まない。自動選択を禁止する設定は追加していない。AGENTS.mdはこのリポジトリでの作業用指示であり、プラグインを入れた別プロジェクトへ常時適用されることは前提にしない。各SKILLは使用時に共通原則を参照する。
 
 ## ローカル導入
 
 1. ZIPを利用する場合は展開する。
-2. 展開したmy-engineering-skillフォルダーをCodexのプロジェクトとして開く。
-3. プラグイン一覧で「My Engineering Skills」というローカル配布元を選び、「My Engineering Skill」をインストールする。
+2. 展開したsujicraftフォルダーをCodexのプロジェクトとして開く。
+3. プラグイン一覧で「Sujicraft」というローカル配布元を選び、「Sujicraft」をインストールする。
 4. 必要に応じてアプリを再起動し、新しいチャットでスキルを確認する。
 
 ローカル配布元が一覧に出ない場合、Codex CLIを利用できる環境では、展開したフォルダーから次を実行する。
 
 ```powershell
 codex plugin marketplace add .
-codex plugin list --marketplace my-engineering-local --available --json
+codex plugin list --marketplace sujicraft-local --available --json
 ```
 
 この環境のCLIは次のインストールコマンドにも対応する。別バージョンでは、先にcodex plugin add --helpで対応を確認する。
 
 ```powershell
-codex plugin add my-engineering-skill@my-engineering-local
+codex plugin add sujicraft@sujicraft-local
 ```
 
 コマンドは利用者のCodex設定とキャッシュへ登録する。既存の個人用marketplace.jsonを上書きする必要はない。
@@ -47,8 +47,8 @@ codex plugin add my-engineering-skill@my-engineering-local
 CLIで解除する場合は、対応するhelpを確認してから次を実行する。
 
 ```powershell
-codex plugin remove my-engineering-skill@my-engineering-local
-codex plugin marketplace remove my-engineering-local
+codex plugin remove sujicraft@sujicraft-local
+codex plugin marketplace remove sujicraft-local
 ```
 
 ## ZIPの再生成
@@ -60,7 +60,7 @@ python scripts/package.py
 python tests/test_package.py
 ```
 
-dist/my-engineering-skill-0.0.1-codex.zipを生成する。同名のZIPは再生成時に置き換える。スクリプトは設定の一致、5つのSKILLの基本形式、300行上限、ローカル参照を確認する。JSON Schema全体や汎用YAMLの正式検証を代替するものではない。
+dist/sujicraft-0.0.1-codex.zipを生成する。同名のZIPは再生成時に置き換える。スクリプトは設定の一致、5つのSKILLの基本形式、300行上限、ローカル参照を確認する。JSON Schema全体や汎用YAMLの正式検証を代替するものではない。
 
 ## 仕様の参照元
 

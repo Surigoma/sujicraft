@@ -1,11 +1,11 @@
 {
-  "name": "my-engineering-local",
+  "name": "sujicraft-local",
   "interface": {
-    "displayName": "My Engineering Skills"
+    "displayName": "Sujicraft"
   },
   "plugins": [
     {
-      "name": "my-engineering-skill",
+      "name": "sujicraft",
       "source": {
         "source": "local",
         "path": "./"
