@@ -4,7 +4,7 @@
 
 Sujicraft（スジクラフト）は、AIコーディングエージェント向けに、設計・実装・レビューの判断基準をまとめた個人用スキル集。「筋の通った」設計・実装・レビューを目指す。複数の実行環境で使える構成にし、会話と実例を通じて育てる。
 
-Ponytailのように、行動ルールは `skills/`、共通原則は `shared/` に置く。実行環境ごとのアダプターは必要最小限にする。
+Ponytailのように、作業ごとの具体的なルールは `skills/`、競合時の優先順位を含む共通の意思決定原則は `shared/` に置く。実行環境ごとのアダプターは必要最小限にする。
 
 ## 現在のスキル
 
@@ -17,13 +17,13 @@ Ponytailのように、行動ルールは `skills/`、共通原則は `shared/` 
 
 ## Codexへの導入
 
-[導入手順](adapters/codex/README.md)に沿ってローカル配布元からインストールする。6つのSKILLと共通原則をまとめて配布する。
+[導入手順](adapters/codex/README.md)に沿ってローカル配布元からインストールする。6つのSKILLと[共通の意思決定原則](shared/principles.md)をまとめて配布する。
 
 Claude CodeとGrok Buildでも同じ6つのSKILLを利用できる。[Claude Code導入手順](adapters/claude-code/README.md) と [Grok Build導入手順](adapters/grok-build/README.md) を参照する。検証範囲は [対応環境の検証記録](validation/compatibility.md) に記録する。
 
 ## 育て方
 
-1. 安定した個人のエンジニアリング原則を `shared/principles.md` に置く。
+1. 複数の選択肢やルールが競合したときの上位の判断基準を `shared/principles.md` に置く。
 2. 作業ごとの進め方を各 `skills/*/SKILL.md` に置く。
 3. `AGENTS.md` は常時適用する指示として読み込めるよう、短く保つ。
 4. 実行環境ごとのアダプターは、スキル本体を複製せず、参照または読み込みにとどめる。
@@ -37,4 +37,4 @@ Claude CodeとGrok Buildでも同じ6つのSKILLを利用できる。[Claude Cod
 
 ## 現在の状態
 
-v0の作成途中。共通原則と6つのスキルを整備しており、会話と実例を通じて判断基準を具体化する。Codex向けの配布設定とZIP生成を実装。検証範囲は [配布検証記録](validation/packaging.md) を参照する。
+v0の作成途中。共通の意思決定原則と6つのスキルを整備しており、会話と実例を通じて判断基準を具体化する。Codex向けの配布設定とZIP生成を実装。検証範囲は [配布検証記録](validation/packaging.md) を参照する。

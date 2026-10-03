@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "sujicraft",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "設計・コーディング・各種レビューとSujicraft自身の保守に使う個人用判断基準。",
   "extensions": {
     "com.openai": {

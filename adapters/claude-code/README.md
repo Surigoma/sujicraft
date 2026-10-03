@@ -1,6 +1,6 @@
 # Claude Codeへの導入
 
-Sujicraft v0.2.2は `.claude-plugin/plugin.json` とルートの `skills/` を使う。6つのSKILLと `shared/` はCodex・Grok Buildと共有する。
+Sujicraft v0.2.3は `.claude-plugin/plugin.json` とルートの `skills/` を使う。6つのSKILLと `shared/` はCodex・Grok Buildと共有する。
 
 ## ローカル読み込み
 
