@@ -26,6 +26,19 @@ def main():
             zipped.extractall(temp)
         moved = Path(temp) / manifest["name"]
         package.validate(moved)
+        marketplace_path = moved / ".claude-plugin/marketplace.json"
+        assert marketplace_path.read_bytes() == (ROOT / ".claude-plugin/marketplace.json").read_bytes()
+        original_catalog = marketplace_path.read_text(encoding="utf-8")
+        empty_catalog = json.loads(original_catalog)
+        empty_catalog["plugins"] = []
+        marketplace_path.write_text(json.dumps(empty_catalog), encoding="utf-8")
+        try:
+            package.validate(moved)
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("Empty marketplace went undetected")
+        marketplace_path.write_text(original_catalog, encoding="utf-8")
         compatibility = moved / ".claude-plugin/plugin.json"
         assert compatibility.read_bytes() == (ROOT / ".claude-plugin/plugin.json").read_bytes()
         original_manifest = compatibility.read_text(encoding="utf-8")
@@ -46,6 +59,11 @@ def main():
                                         capture_output=True, text=True, encoding="utf-8")
                 assert result.returncode == 0, result.stdout + result.stderr
                 print(f"PASS: {client} validates relocated plugin")
+                if client == "claude":
+                    result = subprocess.run([executable, "plugin", "validate", str(compatibility)],
+                                            capture_output=True, text=True, encoding="utf-8")
+                    assert result.returncode == 0, result.stdout + result.stderr
+                    print("PASS: Claude validates both marketplace and plugin manifests")
             else:
                 print(f"SKIP: {client} CLI unavailable")
         for source in (ROOT / "skills").glob("*/SKILL.md"):

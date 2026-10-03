@@ -1,6 +1,6 @@
 # Grok Buildへの導入
 
-Sujicraft v0.2.0はGrok BuildのClaude Code互換プラグイン読み込みを利用する。`.claude-plugin/plugin.json`、6つのSKILL、共通原則を共有する。
+Sujicraft v0.2.1はGrok BuildのClaude Code互換プラグイン読み込みを利用する。`.claude-plugin/plugin.json`、6つのSKILL、共通原則を共有する。
 
 ## ローカル読み込み
 
@@ -14,6 +14,14 @@ grok plugin install "C:\path\to\sujicraft"
 インストール時の確認画面で信頼対象を確認する。作業対象のプロジェクトで `grok` を起動し、`/plugins` と `/skills` でSujicraftと6つのSKILLを確認する。表示された名前で対象SKILLを呼び出す。
 
 フォルダー全体を保持し、skillsだけを切り出さない。Grok BuildはAGENTS.mdも読むため、このリポジトリの保守用AGENTS.mdを別プロジェクトへ無条件でコピーしない。
+
+## マーケットプレイスから導入
+
+リポジトリを配布元として登録する場合は `.claude-plugin/marketplace.json` の一覧が使われる。Sujicraftを1件掲載している。
+
+すでに登録した配布元が0 pluginsになっている場合は、修正版がGitHubへ反映された後に `grok plugin marketplace update https://github.com/Surigoma/sujicraft` を実行し、Grok Buildを再起動する。`/plugins` のMarketplaceからSujicraftを選んでインストールする。
+
+登録と更新のコマンドは利用中の `grok plugin marketplace --help` で確認する。
 
 ## 更新と検証
 

@@ -2,6 +2,8 @@
 
 ## 未リリース
 
+- Claude Code・Grok Buildのマーケットプレイスで0件になる問題を修正。共通カタログと空一覧の検知テストを追加。
+
 - v0.2.0としてClaude Code・Grok Build共通の互換マニフェスト、導入手順、配布検証を追加。
 
 - v0.1.0として、Sujicraft自身のSKILL・マニフェスト・配布・版管理を扱うplugin-maintenanceを追加。

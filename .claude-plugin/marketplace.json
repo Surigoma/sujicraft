@@ -1,0 +1,12 @@
+{
+  "name": "sujicraft",
+  "owner": {
+    "name": "Surigoma"
+  },
+  "plugins": [
+    {
+      "name": "sujicraft",
+      "source": "./"
+    }
+  ]
+}

@@ -27,6 +27,11 @@ def validate(root):
     for field in ("name", "version", "description"):
         check(manifest[field] == claude[field], f"Claude plugin {field} differs")
     check(claude["skills"] == "./skills/", "Invalid Claude skills directory")
+    claude_catalog = json.loads((root / ".claude-plugin/marketplace.json").read_text(encoding="utf-8"))
+    claude_entry, = claude_catalog["plugins"]
+    check(claude_catalog["name"] == "sujicraft", "Claude marketplace name differs")
+    check(claude_entry["name"] == manifest["name"], "Claude marketplace plugin differs")
+    check(claude_entry["source"] == "./", "Invalid Claude marketplace source")
     catalog = json.loads((root / ".agents/plugins/marketplace.json").read_text(encoding="utf-8"))
     check(manifest["name"] == overlay["name"], "Plugin names differ")
     check(manifest["version"] == overlay["version"], "Plugin versions differ")

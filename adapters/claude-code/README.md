@@ -1,6 +1,6 @@
 # Claude Codeへの導入
 
-Sujicraft v0.2.0は `.claude-plugin/plugin.json` とルートの `skills/` を使う。6つのSKILLと `shared/` はCodex・Grok Buildと共有する。
+Sujicraft v0.2.1は `.claude-plugin/plugin.json` とルートの `skills/` を使う。6つのSKILLと `shared/` はCodex・Grok Buildと共有する。
 
 ## ローカル読み込み
 
@@ -13,6 +13,17 @@ claude --plugin-dir "C:\path\to\sujicraft"
 セッションで `/sujicraft:engineering-design` などを呼び出す。6つのSKILLが表示され、共通原則が読めることを確認する。継続して使う場合も起動時に指定する。
 
 skillsだけをコピーすると相対参照が切れるため、フォルダー全体を保持する。SujicraftのAGENTS.mdはこのリポジトリの保守用であり、別プロジェクトへの常時適用は前提にしない。
+
+## マーケットプレイスから導入
+
+`.claude-plugin/marketplace.json` にはSujicraftを1件掲載している。
+
+```powershell
+claude plugin marketplace add Surigoma/sujicraft
+claude plugin install sujicraft@sujicraft
+```
+
+GitHubの修正版を配布元から取得できる状態で実行する。
 
 ## 更新と検証
 
