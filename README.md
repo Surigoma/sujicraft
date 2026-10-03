@@ -13,10 +13,11 @@ Ponytailのように、行動ルールは `skills/`、共通原則は `shared/` 
 - [engineering-review](skills/engineering-review/SKILL.md)：コード・設計のレビュー
 - [ui-design-review](skills/ui-design-review/SKILL.md)：UIデザインのレビュー（情報構成・視線誘導・ユーザーフロー・見た目・アクセシビリティ）
 - [document-review](skills/document-review/SKILL.md)：ドキュメントのレビュー・整理・校正
+- [plugin-maintenance](skills/plugin-maintenance/SKILL.md)：Sujicraft自身のSKILL・設定・配布・版管理
 
 ## Codexへの導入
 
-[導入手順](adapters/codex/README.md)に沿ってローカル配布元からインストールする。5つのSKILLと共通原則をまとめて配布する。
+[導入手順](adapters/codex/README.md)に沿ってローカル配布元からインストールする。6つのSKILLと共通原則をまとめて配布する。
 
 ## 育て方
 
@@ -34,4 +35,4 @@ Ponytailのように、行動ルールは `skills/`、共通原則は `shared/` 
 
 ## 現在の状態
 
-v0の作成途中。共通原則と5つのスキルを整備しており、会話と実例を通じて判断基準を具体化する。Codex向けの配布設定とZIP生成を実装。検証範囲は [配布検証記録](validation/packaging.md) を参照する。
+v0の作成途中。共通原則と6つのスキルを整備しており、会話と実例を通じて判断基準を具体化する。Codex向けの配布設定とZIP生成を実装。検証範囲は [配布検証記録](validation/packaging.md) を参照する。

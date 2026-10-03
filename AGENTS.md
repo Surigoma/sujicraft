@@ -1,6 +1,6 @@
 # エンジニアリングの行動ルール
 
-設計・実装・レビューでは、対象に対応するスキルを使用する。複数の対象を含む作業では必要なスキルを併用する。
+設計・実装・レビュー・Sujicraft自身の保守では、対象に対応するスキルを使用する。複数の対象を含む作業では必要なスキルを併用する。
 
 常に次の原則を守る。
 
@@ -23,5 +23,6 @@
 - [コード・設計レビュー](skills/engineering-review/SKILL.md)
 - [UIデザインレビュー](skills/ui-design-review/SKILL.md)：UIデザインは独立したスキルで確認する。
 - [ドキュメントレビュー](skills/document-review/SKILL.md)：文書のレビュー・整理・校正に使用する。
+- [プラグイン保守](skills/plugin-maintenance/SKILL.md)：Sujicraft自身のSKILL、設定、配布、版管理に使用する。
 
 共通原則は [shared/principles.md](shared/principles.md) にある。

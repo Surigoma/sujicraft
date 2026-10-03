@@ -5,6 +5,14 @@ from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 
 ROOT = Path(__file__).resolve().parents[1]
+EXPECTED_SKILLS = {
+    "document-review",
+    "engineering-code",
+    "engineering-design",
+    "engineering-review",
+    "plugin-maintenance",
+    "ui-design-review",
+}
 
 
 def check(condition, message):
@@ -32,7 +40,9 @@ def validate(root):
     check(entry["source"] == {"source": "local", "path": "./"}, "Invalid local source")
     check(overlay["skills"] == "./skills/", "Invalid skills directory")
     skills = sorted((root / "skills").glob("*/SKILL.md"))
-    check(len(skills) == 5, "Expected five skills")
+    skill_names = {skill.parent.name for skill in skills}
+    check(skill_names == EXPECTED_SKILLS,
+          f"Unexpected skills: expected {sorted(EXPECTED_SKILLS)}, got {sorted(skill_names)}")
     for skill in skills:
         text = skill.read_text(encoding="utf-8")
         match = re.match(r"^---\nname: ([a-z0-9-]+)\ndescription: ([^\n]+)\n---\n", text)
@@ -65,7 +75,7 @@ def main():
         for path in sorted(paths):
             archive.write(path, f'{manifest["name"]}/{path.relative_to(ROOT).as_posix()}')
     # ponytail: fixed package folders; add an explicit folder when the package gains resources.
-    print(f"Validated five skills; packaged {len(paths)} files: {output}")
+    print(f"Validated {len(EXPECTED_SKILLS)} skills; packaged {len(paths)} files: {output}")
 
 
 if __name__ == "__main__":
