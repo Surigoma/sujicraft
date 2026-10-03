@@ -19,7 +19,7 @@ grok plugin install "C:\path\to\sujicraft"
 
 リポジトリを配布元として登録する場合は `.claude-plugin/marketplace.json` の一覧が使われる。Sujicraftを1件掲載している。
 
-すでに登録した配布元が0 pluginsになっている場合は、修正版がGitHubへ反映された後に `grok plugin marketplace update https://github.com/Surigoma/sujicraft` を実行し、Grok Buildを再起動する。`/plugins` のMarketplaceからSujicraftを選んでインストールする。
+すでに登録した配布元が0 pluginsになっている場合は、修正版がGitHubへ反映された後に `grok plugin marketplace update sujicraft` を実行し、Grok Buildを再起動する。`/plugins` のMarketplaceからSujicraftを選んでインストールする。
 
 登録と更新のコマンドは利用中の `grok plugin marketplace --help` で確認する。
 
