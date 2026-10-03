@@ -26,6 +26,19 @@ def main():
             zipped.extractall(temp)
         moved = Path(temp) / manifest["name"]
         package.validate(moved)
+        grok_catalog_path = moved / ".grok-plugin/marketplace.json"
+        assert grok_catalog_path.read_bytes() == (ROOT / ".grok-plugin/marketplace.json").read_bytes()
+        original_grok_catalog = grok_catalog_path.read_text(encoding="utf-8")
+        invalid_grok_catalog = json.loads(original_grok_catalog)
+        invalid_grok_catalog["plugins"][0]["source"] = "./"
+        grok_catalog_path.write_text(json.dumps(invalid_grok_catalog), encoding="utf-8")
+        try:
+            package.validate(moved)
+        except ValueError as error:
+            assert "Invalid Grok marketplace source" in str(error)
+        else:
+            raise AssertionError("Grok root-local source went undetected")
+        grok_catalog_path.write_text(original_grok_catalog, encoding="utf-8")
         marketplace_path = moved / ".claude-plugin/marketplace.json"
         assert marketplace_path.read_bytes() == (ROOT / ".claude-plugin/marketplace.json").read_bytes()
         original_catalog = marketplace_path.read_text(encoding="utf-8")

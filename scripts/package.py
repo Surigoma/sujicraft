@@ -32,6 +32,12 @@ def validate(root):
     check(claude_catalog["name"] == "sujicraft", "Claude marketplace name differs")
     check(claude_entry["name"] == manifest["name"], "Claude marketplace plugin differs")
     check(claude_entry["source"] == "./", "Invalid Claude marketplace source")
+    grok_catalog = json.loads((root / ".grok-plugin/marketplace.json").read_text(encoding="utf-8"))
+    grok_entry, = grok_catalog["plugins"]
+    check(grok_entry["name"] == manifest["name"], "Grok marketplace plugin differs")
+    check(grok_entry["source"] == {
+        "source": "url", "url": "https://github.com/Surigoma/sujicraft.git", "ref": "main"
+    }, "Invalid Grok marketplace source")
     catalog = json.loads((root / ".agents/plugins/marketplace.json").read_text(encoding="utf-8"))
     check(manifest["name"] == overlay["name"], "Plugin names differ")
     check(manifest["version"] == overlay["version"], "Plugin versions differ")
@@ -77,7 +83,7 @@ def main():
     output = ROOT / "dist" / f'{manifest["name"]}-{manifest["version"]}-codex.zip'
     output.parent.mkdir(exist_ok=True)
     paths = [ROOT / name for name in ("plugin.json", "AGENTS.md", "README.md", "CHANGELOG.md")]
-    for name in (".codex-plugin", ".claude-plugin", ".agents", "skills", "shared", "assets", "adapters", "validation", "scripts", "tests"):
+    for name in (".codex-plugin", ".claude-plugin", ".grok-plugin", ".agents", "skills", "shared", "assets", "adapters", "validation", "scripts", "tests"):
         paths.extend(path for path in (ROOT / name).rglob("*")
                      if path.is_file() and "__pycache__" not in path.parts)
     with ZipFile(output, "w", ZIP_DEFLATED) as archive:

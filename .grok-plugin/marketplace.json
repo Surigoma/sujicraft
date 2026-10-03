@@ -1,0 +1,17 @@
+{
+  "name": "sujicraft",
+  "description": "Sujicraft engineering skills",
+  "owner": { "name": "Surigoma" },
+  "plugins": [
+    {
+      "name": "sujicraft",
+      "description": "設計・実装・レビューとSujicraft自身の保守を支える6つのSKILL",
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Surigoma/sujicraft.git",
+        "ref": "main"
+      }
+    }
+  ]
+}
