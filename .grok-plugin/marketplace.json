@@ -5,7 +5,7 @@
   "plugins": [
     {
       "name": "sujicraft",
-      "description": "設計・実装・レビューとSujicraft自身の保守を支える6つのSKILL",
+      "description": "設計・実装・コミット・レビューを支える7つのSKILL",
       "category": "development",
       "source": {
         "source": "url",

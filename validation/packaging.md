@@ -8,7 +8,7 @@
 - .codex-plugin/plugin.json：Codex互換設定
 - .claude-plugin/plugin.json：Claude Code・Grok Build互換設定。v0.2.0で追加
 - .agents/plugins/marketplace.json：ローカル配布カタログ
-- skills：6つのSKILL。Sujicraft自身の保守用SKILLを含む
+- skills：7つのSKILL。Sujicraft自身の保守用SKILLを含む
 - shared：既存の共通原則。各SKILLからの相対参照を維持
 - scripts/package.py：標準ライブラリによる基本検証とZIP生成
 - tests/test_package.py：ZIP展開・移設・参照欠損検知・CLI認識のチェック
@@ -20,13 +20,13 @@
 - JSON設定の読み込み、名前・バージョン・表示設定の一致
 - 一覧用ロゴとコンポーザー用アイコンの設定、および配布物内の参照先
 - ローカル配布カタログからプラグインルートへの対応
-- 6つのSKILLの名前・説明の基本形式
+- 7つのSKILLの名前・説明の基本形式
 - 全Markdown文書のUTF-8読み込み・300行上限・ローカルリンク先
 - 配布ZIPの生成とCRC検査
 - 一時ディレクトリへ展開したZIPの再検証
 - 元のSKILLと共通原則がZIP内とバイト単位で一致すること
 - 共通原則を欠損させた場合に、参照エラーとして検知すること
-- 展開先を一時的なローカル配布元として指定し、Codex CLIがsujicraft@sujicraft-validation、バージョン0.2.3を利用可能として返すこと
+- 展開先を一時的なローカル配布元として指定し、Codex CLIがsujicraft@sujicraft-validation、バージョン0.3.0を利用可能として返すこと
 - 過去のローカル配布元からのv0.1.0再インストール検証で、キャッシュ内の版、6つのSKILL、plugin-maintenanceの内容がソースと一致したこと
 
 最初の設定なしの一覧取得ではこの配布元は表示されなかった。この環境のCLIでの検証には、コマンド単位のmarketplaces設定を使用した。通常の利用では、導入手順にある配布元登録が必要となる場合がある。

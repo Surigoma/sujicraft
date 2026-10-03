@@ -1,11 +1,11 @@
 {
   "name": "sujicraft",
-  "version": "0.2.3",
-  "description": "設計・コーディング・各種レビューとSujicraft自身の保守に使う個人用判断基準。",
+  "version": "0.3.0",
+  "description": "設計・コーディング・コミットメッセージ・各種レビューとSujicraft自身の保守に使う個人用判断基準。",
   "skills": "./skills/",
   "interface": {
     "displayName": "Sujicraft",
-    "shortDescription": "設計・実装・レビューとSujicraft自身の保守を支える個人用ルール",
+    "shortDescription": "設計・実装・コミット・レビューを支える個人用ルール",
     "category": "Productivity",
     "capabilities": ["Instructions"],
     "composerIcon": "./assets/branding/sujicraft-icon-joinery.png",

@@ -1,6 +1,6 @@
 # エンジニアリングの行動ルール
 
-設計・実装・レビュー・Sujicraft自身の保守では、対象に対応するスキルを使用する。複数の対象を含む作業では必要なスキルを併用する。
+設計・実装・コミットメッセージ作成・レビュー・Sujicraft自身の保守では、対象に対応するスキルを使用する。複数の対象を含む作業では必要なスキルを併用する。
 
 [共通の意思決定原則](shared/principles.md)を常に確認する。複数のルールや選択肢が競合する場合は、そこで定めた優先順位と「Prefer the smallest justified change」に従う。行数・ファイル数や一般的なベストプラクティスだけで判断しない。
 
@@ -10,6 +10,7 @@
 
 - [設計](skills/engineering-design/SKILL.md)
 - [コーディング](skills/engineering-code/SKILL.md)
+- [コミットメッセージ](skills/commit-message/SKILL.md)：変更の前提・内容・結果を履歴として残す。
 - [コード・設計レビュー](skills/engineering-review/SKILL.md)
 - [UIデザインレビュー](skills/ui-design-review/SKILL.md)：UIデザインは独立したスキルで確認する。
 - [ドキュメントレビュー](skills/document-review/SKILL.md)：文書のレビュー・整理・校正に使用する。

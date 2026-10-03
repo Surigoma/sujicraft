@@ -1,6 +1,6 @@
 # Grok Buildへの導入
 
-Sujicraft v0.2.3はGrok BuildのClaude Code互換プラグイン読み込みを利用する。`.claude-plugin/plugin.json`、6つのSKILL、共通の意思決定原則を共有する。
+Sujicraft v0.3.0はGrok BuildのClaude Code互換プラグイン読み込みを利用する。`.claude-plugin/plugin.json`、7つのSKILL、共通の意思決定原則を共有する。
 
 ## ローカル読み込み
 
@@ -11,7 +11,7 @@ grok plugin validate "C:\path\to\sujicraft"
 grok plugin install "C:\path\to\sujicraft"
 ```
 
-インストール時の確認画面で信頼対象を確認する。作業対象のプロジェクトで `grok` を起動し、`/plugins` と `/skills` でSujicraftと6つのSKILLを確認する。表示された名前で対象SKILLを呼び出す。
+インストール時の確認画面で信頼対象を確認する。作業対象のプロジェクトで `grok` を起動し、`/plugins` と `/skills` でSujicraftと7つのSKILLを確認する。表示された名前で対象SKILLを呼び出す。
 
 フォルダー全体を保持し、skillsだけを切り出さない。Grok BuildはAGENTS.mdも読むため、このリポジトリの保守用AGENTS.mdを別プロジェクトへ無条件でコピーしない。
 
