@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "sujicraft",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "設計・コーディング・コードレビュー・UIデザインレビュー・ドキュメントレビューの個人用判断基準。",
   "extensions": {
     "com.openai": {
@@ -9,7 +9,9 @@
         "displayName": "Sujicraft",
         "shortDescription": "設計・実装・3種類のレビューを支える個人用ルール",
         "category": "Productivity",
-        "capabilities": ["Instructions"]
+        "capabilities": ["Instructions"],
+        "composerIcon": "./assets/branding/sujicraft-icon-joinery.png",
+        "logo": "./assets/branding/sujicraft-icon-joinery.png"
       }
     }
   }

@@ -20,6 +20,13 @@ def validate(root):
     check(manifest["version"] == overlay["version"], "Plugin versions differ")
     check(manifest["extensions"]["com.openai"]["interface"] == overlay["interface"],
           "Plugin interfaces differ")
+    interface = overlay["interface"]
+    for field in ("composerIcon", "logo"):
+        target = interface.get(field, "")
+        check(target.startswith("./assets/"), f"Invalid {field} path")
+        asset = (root / target[2:]).resolve()
+        check(asset.is_relative_to(root.resolve()) and asset.is_file(),
+              f"Missing {field} asset: {target}")
     entry, = catalog["plugins"]
     check(entry["name"] == manifest["name"], "Marketplace name differs")
     check(entry["source"] == {"source": "local", "path": "./"}, "Invalid local source")
