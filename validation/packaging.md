@@ -6,6 +6,7 @@
 
 - plugin.json：ポータブル形式のプラグイン設定
 - .codex-plugin/plugin.json：Codex互換設定
+- .claude-plugin/plugin.json：Claude Code・Grok Build互換設定。v0.2.0で追加
 - .agents/plugins/marketplace.json：ローカル配布カタログ
 - skills：6つのSKILL。Sujicraft自身の保守用SKILLを含む
 - shared：既存の共通原則。各SKILLからの相対参照を維持

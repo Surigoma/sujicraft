@@ -21,6 +21,7 @@ description: Sujicraftプラグイン自身のSKILL、共通原則、マニフ�
 - ルートの `plugin.json` をポータブルな識別情報の基準とする。
 - `plugin.json` の `extensions.com.openai.interface` と `.codex-plugin/plugin.json` の `interface` を一致させる。
 - 2つのマニフェストの `name` と `version` を一致させる。
+- `.claude-plugin/plugin.json` の名前・版・説明もルートと同期する。Claude CodeとGrok Buildはこの互換設定と共通のSKILLを利用する。
 - プラグイン内のパスはルート相対の `./` 形式にし、配布物の外を参照させない。
 - SKILLのフォルダー名とfrontmatterの `name` を一致させ、`description` に適用対象と非対象を判別できる情報を含める。
 - SKILLから共通原則や補助資料への相対参照を、ZIP展開後も解決できる状態に保つ。
@@ -42,6 +43,7 @@ description: Sujicraftプラグイン自身のSKILL、共通原則、マニフ�
 - 配布内容を変更したら、互換性のある修正はパッチ、新しいSKILLや利用目的の追加はマイナーを基本としてバージョンを更新する。公開方針が別に指定されている場合は従う。
 - `CHANGELOG.md` に利用者から見える変更を記録し、READMEと導入手順の版・SKILL数・生成物名を同期する。
 - 配布構成の詳細と再インストール方法は [Codex導入手順](../../adapters/codex/README.md) を参照する。
+- Claude Code・Grok Build対応は [アダプター一覧](../../adapters/README.md) と [対応環境の検証記録](../../validation/compatibility.md) を参照する。
 
 ## 検証
 

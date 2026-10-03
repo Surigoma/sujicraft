@@ -23,6 +23,10 @@ def check(condition, message):
 def validate(root):
     manifest = json.loads((root / "plugin.json").read_text(encoding="utf-8"))
     overlay = json.loads((root / ".codex-plugin/plugin.json").read_text(encoding="utf-8"))
+    claude = json.loads((root / ".claude-plugin/plugin.json").read_text(encoding="utf-8"))
+    for field in ("name", "version", "description"):
+        check(manifest[field] == claude[field], f"Claude plugin {field} differs")
+    check(claude["skills"] == "./skills/", "Invalid Claude skills directory")
     catalog = json.loads((root / ".agents/plugins/marketplace.json").read_text(encoding="utf-8"))
     check(manifest["name"] == overlay["name"], "Plugin names differ")
     check(manifest["version"] == overlay["version"], "Plugin versions differ")
@@ -68,7 +72,7 @@ def main():
     output = ROOT / "dist" / f'{manifest["name"]}-{manifest["version"]}-codex.zip'
     output.parent.mkdir(exist_ok=True)
     paths = [ROOT / name for name in ("plugin.json", "AGENTS.md", "README.md", "CHANGELOG.md")]
-    for name in (".codex-plugin", ".agents", "skills", "shared", "assets", "adapters", "validation", "scripts", "tests"):
+    for name in (".codex-plugin", ".claude-plugin", ".agents", "skills", "shared", "assets", "adapters", "validation", "scripts", "tests"):
         paths.extend(path for path in (ROOT / name).rglob("*")
                      if path.is_file() and "__pycache__" not in path.parts)
     with ZipFile(output, "w", ZIP_DEFLATED) as archive:

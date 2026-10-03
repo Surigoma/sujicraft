@@ -26,6 +26,28 @@ def main():
             zipped.extractall(temp)
         moved = Path(temp) / manifest["name"]
         package.validate(moved)
+        compatibility = moved / ".claude-plugin/plugin.json"
+        assert compatibility.read_bytes() == (ROOT / ".claude-plugin/plugin.json").read_bytes()
+        original_manifest = compatibility.read_text(encoding="utf-8")
+        changed_manifest = json.loads(original_manifest)
+        changed_manifest["version"] = "0.0.0"
+        compatibility.write_text(json.dumps(changed_manifest), encoding="utf-8")
+        try:
+            package.validate(moved)
+        except ValueError as error:
+            assert "Claude plugin version differs" in str(error)
+        else:
+            raise AssertionError("Mismatched compatibility version went undetected")
+        compatibility.write_text(original_manifest, encoding="utf-8")
+        for client in ("claude", "grok"):
+            executable = shutil.which(client)
+            if executable:
+                result = subprocess.run([executable, "plugin", "validate", str(moved)],
+                                        capture_output=True, text=True, encoding="utf-8")
+                assert result.returncode == 0, result.stdout + result.stderr
+                print(f"PASS: {client} validates relocated plugin")
+            else:
+                print(f"SKIP: {client} CLI unavailable")
         for source in (ROOT / "skills").glob("*/SKILL.md"):
             assert source.read_bytes() == (moved / source.relative_to(ROOT)).read_bytes()
         assert (ROOT / "shared/principles.md").read_bytes() == (moved / "shared/principles.md").read_bytes()

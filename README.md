@@ -19,6 +19,8 @@ Ponytailのように、行動ルールは `skills/`、共通原則は `shared/` 
 
 [導入手順](adapters/codex/README.md)に沿ってローカル配布元からインストールする。6つのSKILLと共通原則をまとめて配布する。
 
+Claude CodeとGrok Buildでも同じ6つのSKILLを利用できる。[Claude Code導入手順](adapters/claude-code/README.md) と [Grok Build導入手順](adapters/grok-build/README.md) を参照する。検証範囲は [対応環境の検証記録](validation/compatibility.md) に記録する。
+
 ## 育て方
 
 1. 安定した個人のエンジニアリング原則を `shared/principles.md` に置く。
