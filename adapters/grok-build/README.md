@@ -1,6 +1,6 @@
 # Grok Buildへの導入
 
-Sujicraft v0.3.1はGrok BuildのClaude Code互換プラグイン読み込みを利用する。`.claude-plugin/plugin.json`、7つのSKILL、共通の意思決定原則を共有する。
+Sujicraft v0.3.2はGrok BuildのClaude Code互換プラグイン読み込みを利用する。`.claude-plugin/plugin.json`、7つのSKILL、共通の意思決定原則を共有する。
 
 ## ローカル読み込み
 
