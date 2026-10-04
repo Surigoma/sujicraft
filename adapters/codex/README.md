@@ -4,7 +4,7 @@
 
 ZIPを展開すると、sujicraftフォルダーに7つのSKILL、共通原則、プラグイン設定、ローカル配布カタログが入る。フォルダー全体を保持する。skillsだけを切り出すと共通原則への参照が切れる。
 
-現在のバージョンは0.3.0。外部サービス、MCP、実行フックは含まない。自動選択を禁止する設定は追加していない。AGENTS.mdはこのリポジトリでの作業用指示であり、プラグインを入れた別プロジェクトへ常時適用されることは前提にしない。各SKILLは使用時に共通の意思決定原則を参照する。
+現在のバージョンは0.3.1。外部サービス、MCP、実行フックは含まない。自動選択を禁止する設定は追加していない。AGENTS.mdはこのリポジトリでの作業用指示であり、プラグインを入れた別プロジェクトへ常時適用されることは前提にしない。各SKILLは使用時に共通の意思決定原則を参照する。
 
 ## ローカル導入
 
@@ -36,7 +36,7 @@ codex plugin add sujicraft@sujicraft-local
 - engineering-code：実装
 - commit-message：前提・内容・結果を伝えるコミットメッセージの作成とレビュー
 - engineering-review：コード・システム設計のレビュー
-- ui-design-review：実画面でのUIデザインレビュー
+- ui-design-review：UIの新規作成・変更時にも行う実画面でのデザインレビュー
 - document-review：文章・構成・参照のレビューと校正
 - plugin-maintenance：Sujicraft自身のSKILL・設定・配布・版管理
 
@@ -62,7 +62,7 @@ python scripts/package.py
 python tests/test_package.py
 ```
 
-dist/sujicraft-0.3.0-codex.zipを生成する。Claude Code・Grok Build用の互換マニフェストとカタログも含む。同名のZIPは再生成時に置き換える。スクリプトは設定の一致、アイコン参照、7つのSKILLの基本形式、300行上限、ローカル参照を確認する。JSON Schema全体や汎用YAMLの正式検証を代替するものではない。
+dist/sujicraft-0.3.1-codex.zipを生成する。Claude Code・Grok Build用の互換マニフェストとカタログも含む。同名のZIPは再生成時に置き換える。スクリプトは設定の一致、アイコン参照、7つのSKILLの基本形式、300行上限、ローカル参照を確認する。JSON Schema全体や汎用YAMLの正式検証を代替するものではない。
 
 ## 仕様の参照元
 

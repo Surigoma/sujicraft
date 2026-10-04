@@ -1,6 +1,6 @@
 {
   "name": "sujicraft",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "設計・コーディング・コミットメッセージ・各種レビューとSujicraft自身の保守に使う個人用判断基準。",
   "skills": "./skills/",
   "interface": {

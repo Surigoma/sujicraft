@@ -12,7 +12,7 @@ Ponytailのように、作業ごとの具体的なルールは `skills/`、競�
 - [engineering-code](skills/engineering-code/SKILL.md)：実装時の判断と進め方
 - [commit-message](skills/commit-message/SKILL.md)：変更の前提・内容・結果を伝えるコミットメッセージの作成とレビュー
 - [engineering-review](skills/engineering-review/SKILL.md)：コード・設計のレビュー
-- [ui-design-review](skills/ui-design-review/SKILL.md)：UIデザインのレビュー（情報構成・視線誘導・ユーザーフロー・見た目・アクセシビリティ）
+- [ui-design-review](skills/ui-design-review/SKILL.md)：UIの新規作成・変更時と明示的な依頼時のデザインレビュー（情報構成・視線誘導・ユーザーフロー・見た目・アクセシビリティ）
 - [document-review](skills/document-review/SKILL.md)：ドキュメントのレビュー・整理・校正
 - [plugin-maintenance](skills/plugin-maintenance/SKILL.md)：Sujicraft自身のSKILL・設定・配布・版管理
 

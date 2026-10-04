@@ -12,6 +12,6 @@
 - [コーディング](skills/engineering-code/SKILL.md)
 - [コミットメッセージ](skills/commit-message/SKILL.md)：変更の前提・内容・結果を履歴として残す。
 - [コード・設計レビュー](skills/engineering-review/SKILL.md)
-- [UIデザインレビュー](skills/ui-design-review/SKILL.md)：UIデザインは独立したスキルで確認する。
+- [UIデザインレビュー](skills/ui-design-review/SKILL.md)：UIの新規作成・変更時にも、明示的なレビュー依頼を待たず併用する。
 - [ドキュメントレビュー](skills/document-review/SKILL.md)：文書のレビュー・整理・校正に使用する。
 - [プラグイン保守](skills/plugin-maintenance/SKILL.md)：Sujicraft自身のSKILL、設定、配布、版管理に使用する。
